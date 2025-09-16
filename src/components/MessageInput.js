@@ -67,14 +67,14 @@ const MessageInput = ({
           />
 
           <div className="input-actions">
-            <button
+            {/* <button
               type="button"
               className="btn btn-ghost btn-sm attach-btn"
               disabled={disabled}
               title="Attach file"
             >
               <FiPaperclip size={16} />
-            </button>
+            </button> */}
 
             <button
               type="submit"
