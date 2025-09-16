@@ -42,12 +42,15 @@
   margin: var(--spacing-sm);
   margin-top: 0;
   overflow: hidden;
+  width: calc(100% - 250px - 2 * var(--spacing-sm)); // Account for sidebar width
+  min-width: 0;
   
   @media (max-width: 768px) {
     margin-left: 0;
     margin: 0;
     border-radius: 0;
     height: calc(100vh - 70px);
+    width: 100%;
   }
 }
 

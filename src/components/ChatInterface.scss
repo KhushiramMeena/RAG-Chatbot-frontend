@@ -10,8 +10,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-width: none;
-  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+  flex: 1;
   background: transparent;
   border-radius: 0;
   overflow: hidden;
@@ -87,6 +88,8 @@
   flex-direction: column;
   gap: var(--spacing-md);
   max-height: calc(100vh - 200px); /* Account for header and input */
+  width: 100%;
+  min-width: 0;
   
   // Custom scrollbar
   &::-webkit-scrollbar {
@@ -142,10 +145,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  flex: 1;
+  min-height: 400px;
   text-align: center;
   gap: var(--spacing-lg);
   padding: var(--spacing-xl);
+  width: 100%;
   
   .empty-icon {
     font-size: 4rem;
