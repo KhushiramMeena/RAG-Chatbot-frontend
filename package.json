@@ -1,0 +1,53 @@
+{
+  "name": "rag-news-chatbot-frontend",
+  "version": "1.0.0",
+  "description": "React frontend for RAG-powered news chatbot",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "socket.io-client": "^4.7.4",
+    "axios": "^1.6.2",
+    "react-router-dom": "^6.8.1",
+    "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "uuid": "^9.0.1",
+    "date-fns": "^2.30.0",
+    "react-icons": "^4.12.0",
+    "framer-motion": "^10.16.16",
+    "react-hot-toast": "^2.4.1"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@types/uuid": "^9.0.7",
+    "@types/react-syntax-highlighter": "^15.5.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5000"
+}

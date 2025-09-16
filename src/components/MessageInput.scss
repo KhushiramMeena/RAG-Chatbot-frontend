@@ -1,0 +1,192 @@
+.message-input {
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-sm);
+  background: var(--surface-elevated);
+  border: 2px solid var(--border-light);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  
+  &:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
+  }
+  
+  &:hover {
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.message-textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  min-height: 20px;
+  max-height: 120px;
+  padding: 0;
+  
+  &::placeholder {
+    color: var(--text-muted);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+  }
+}
+
+.input-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+.attach-btn {
+  padding: var(--spacing-xs);
+  opacity: 0.7;
+  
+  &:hover:not(:disabled) {
+    opacity: 1;
+  }
+}
+
+.send-btn {
+  padding: var(--spacing-xs);
+  transition: all 0.2s ease-in-out;
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &.can-send {
+    background-color: var(--primary-color);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--primary-hover);
+      transform: scale(1.05);
+    }
+  }
+}
+
+.input-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 0 var(--spacing-xs);
+}
+
+.char-count {
+  font-weight: 500;
+  
+  &.warning {
+    color: var(--warning-color);
+  }
+  
+  &.error {
+    color: var(--error-color);
+  }
+}
+
+.input-hint {
+  font-size: 0.7rem;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .input-wrapper {
+    padding: var(--spacing-xs);
+  }
+  
+  .message-textarea {
+    font-size: 0.8rem;
+  }
+  
+  .input-footer {
+    font-size: 0.7rem;
+    
+    .input-hint {
+      display: none;
+    }
+  }
+  
+  .attach-btn {
+    display: none;
+  }
+}
+
+// Animation for send button
+.send-btn {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  }
+  
+  &:active::before {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+// Focus styles
+.message-textarea:focus {
+  outline: none;
+}
+
+// Disabled state
+.input-wrapper:has(.message-textarea:disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
