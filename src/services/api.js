@@ -2,13 +2,14 @@ import axios from "axios";
 
 const API_BASE_URL =
   process.env.NODE_ENV === "production"
-    ? process.env.REACT_APP_API_URL || "https://rag-chatbot-backend-uscj.onrender.com/api"
+    ? process.env.REACT_APP_API_URL ||
+      "https://rag-chatbot-backend-uscj.onrender.com/api"
     : process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 // Create axios instance with default config
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 30000,
+  timeout: 60000, // Increased from 30000 to 60000 (60 seconds)
   headers: {
     "Content-Type": "application/json",
   },

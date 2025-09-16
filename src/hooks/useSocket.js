@@ -3,7 +3,8 @@ import io from "socket.io-client";
 
 const SOCKET_URL =
   process.env.NODE_ENV === "production"
-    ? process.env.REACT_APP_SOCKET_URL || "https://rag-chatbot-backend-uscj.onrender.com"
+    ? process.env.REACT_APP_SOCKET_URL ||
+      "https://rag-chatbot-backend-uscj.onrender.com"
     : process.env.REACT_APP_SOCKET_URL || "http://localhost:5000";
 
 export const useSocket = () => {
